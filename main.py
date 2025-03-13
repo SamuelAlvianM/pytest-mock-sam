@@ -2,7 +2,7 @@ from flask import Flask
 from routes.coffee_service import coffee_blueprint
 from routes.cust_service    import cust_blueprint
 
-# untuk membedakan cofiguration dev dengan test kita butuh ini 
+# untuk membedakan cofiguration dev dengan test kita butuh ini s
 def create_app(config_name='development'):
 
     app = Flask(__name__)
