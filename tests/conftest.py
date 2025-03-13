@@ -1,7 +1,6 @@
 import pytest
 from flask import Flask
 import sys
-from unittest.mock import patch
 import importlib
 
 # buat test per sesi, jadi kita gaakan bisa run test secara overall. harus by file
@@ -31,7 +30,7 @@ def setup_mock_environment():
 
 @pytest.fixture
 def app():
-    """Create a Flask app for testing."""
+
     app = Flask(__name__)
     app.config['TESTING'] = True
     
