@@ -15,6 +15,7 @@ def get_cust_by_id(customer_id):
     customer = customer_db.get(customer_id)
     if not customer:
         return jsonify({"message": "Coffee not found"}), 404
+
     return jsonify(customer), 200
 
 @cust_blueprint.route("/coffee", methods=['POST'])
