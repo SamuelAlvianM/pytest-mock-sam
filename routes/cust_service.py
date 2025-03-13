@@ -30,7 +30,7 @@ def create_coffee():
         "sold": data.get("sold", 0),
     }
 
-    coffee_db[new_id] = new_coffee
+    customer_db[new_id] = new_coffee
     return jsonify(new_coffee), 201
 
 @cust_blueprint.route("/coffee/<int:customer_id>", methods=["PUT"])
