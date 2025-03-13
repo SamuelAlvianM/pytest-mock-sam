@@ -17,6 +17,21 @@ def get_cust_by_id(customer_id):
         return jsonify({"message": "Coffee not found"}), 404
     return jsonify(customer), 200
 
+@cust_blueprint.route("/coffee", methods=['POST'])
+def create_coffee():
+    data = request.json
+    new_id = max(customer_db.keys(), default=0) + 1
+    new_coffee = {
+        "id": new_id,
+        "name": data.get("name"),
+        "product": data.get("product"),
+        "ingredients": data.get("ingredients", []),
+        "sold": data.get("sold", 0),
+    }
+
+    coffee_db[new_id] = new_coffee
+    return jsonify(new_coffee), 201
+
 @cust_blueprint.route("/coffee/<int:customer_id>", methods=["PUT"])
 def update_coffee(customer_id):
     if customer_id not in customer_db:
