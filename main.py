@@ -1,5 +1,6 @@
 from flask import Flask
 from routes.coffee_service import coffee_blueprint
+from routes.cust_service    import cust_blueprint
 
 # untuk membedakan cofiguration dev dengan test kita butuh ini 
 def create_app(config_name='development'):
@@ -13,6 +14,7 @@ def create_app(config_name='development'):
 
     
     app.register_blueprint(coffee_blueprint)
+    app.register_blueprint(cust_blueprint)
 
     return app
 
