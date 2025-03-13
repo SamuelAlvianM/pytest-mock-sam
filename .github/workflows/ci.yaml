@@ -1,0 +1,29 @@
+name: python CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11.11'
+    
+    - name: Install dependencies
+      run : |
+        pip install uv
+        uv pip install -r requirements.txt
+        uv pip install pytest
+
+    - name: Run tests
+      run: |
+        uv run pytest tests/

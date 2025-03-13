@@ -51,3 +51,10 @@ uv run pytest tests/test_mock_coffee.py -v
 uv run pytest tests/test_mock_coffee.py -v --capture=no
 ```
 
+CI:
+- RUNNING SAAT PULL REQUESTS
+- TUJUAN BRANCHNYA ADALAH MASTER
+- INSTALL DEPENDENCIES
+- JALANKAN TEST
+
+![alt text](image-1.png)
